@@ -15,6 +15,7 @@ const Faculty = () => {
     email: "",
     phone: "",
     profile: "",
+    employeeId: "",
     address: "",
     city: "",
     state: "",
@@ -173,6 +174,7 @@ const Faculty = () => {
       email: faculty.email || "",
       phone: faculty.phone || "",
       profile: faculty.profile || "",
+      employeeId: faculty.employeeId || "", 
       address: faculty.address || "",
       city: faculty.city || "",
       state: faculty.state || "",
@@ -231,6 +233,7 @@ const Faculty = () => {
       email: "",
       phone: "",
       profile: "",
+      employeeId: "", 
       address: "",
       city: "",
       state: "",
@@ -355,6 +358,20 @@ const Faculty = () => {
                     value={data.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Employee ID
+                  </label>
+                  <input
+                    type="text"
+                    value={data.employeeId}
+                    onChange={(e) => handleInputChange("employeeId", e.target.value)}
+                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter Employee ID (e.g. 807788)"
                     required
                   />
                 </div>

@@ -3,8 +3,9 @@ const bcrypt = require("bcryptjs");
 const facultyDetailsSchema = new mongoose.Schema(
   {
     employeeId: {
-      type: Number,
+      type: String,
       required: true,
+      unique: true
     },
     firstName: {
       type: String,
@@ -89,6 +90,7 @@ const facultyDetailsSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    faceDescriptor: { type: [Number], default: null },
   },
   { timestamps: true }
 );

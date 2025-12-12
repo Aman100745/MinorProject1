@@ -3,8 +3,9 @@ const bcrypt = require("bcryptjs");
 const studentDetailsSchema = new mongoose.Schema(
   {
     enrollmentNo: {
-      type: Number,
+      type: String,
       required: true,
+      unique: true
     },
     firstName: {
       type: String,
@@ -12,7 +13,8 @@ const studentDetailsSchema = new mongoose.Schema(
     },
     middleName: {
       type: String,
-      required: true,
+      required: false,
+      default: "",
     },
     lastName: {
       type: String,
@@ -85,6 +87,7 @@ const studentDetailsSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    faceDescriptor: { type: [Number], default: null },
   },
   { timestamps: true }
 );

@@ -88,6 +88,7 @@ const adminDetailsSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    faceDescriptor: { type: [Number], default: null },
   },
   { timestamps: true }
 );
